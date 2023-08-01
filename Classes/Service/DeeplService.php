@@ -7,6 +7,7 @@ namespace WebVision\WvDeepltranslate\Service;
 use GuzzleHttp\Exception\ClientException;
 use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface;
+use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -35,7 +36,7 @@ class DeeplService
 
     protected GlossaryRepository $glossaryRepository;
 
-    private FrontendInterface $cache;
+    //private FrontendInterface $cache;
 
     private Client $client;
 
@@ -43,7 +44,7 @@ class DeeplService
         ?FrontendInterface $cache = null,
         ?Client $client = null
     ) {
-        $this->cache = $cache ?? GeneralUtility::makeInstance(CacheManager::class)->getCache('wvdeepltranslate');
+        //$this->cache = $cache ?? GeneralUtility::makeInstance(CacheManager::class)->getCache('wvdeepltranslate');
         $this->client = $client ?? GeneralUtility::makeInstance(Client::class);
         $this->glossaryRepository = GeneralUtility::makeInstance(GlossaryRepository::class);
 
@@ -90,12 +91,16 @@ class DeeplService
 
     private function loadSupportedLanguages(): void
     {
+        // @ToDo implement cache
+        /*
         $cacheIdentifier = 'wv-deepl-supported-languages-target';
         if (($supportedTargetLanguages = $this->cache->get($cacheIdentifier)) === false) {
             $supportedTargetLanguages = $this->loadSupportedLanguagesFromAPI();
 
             $this->cache->set($cacheIdentifier, $supportedTargetLanguages, [], 86400);
-        }
+        }*/
+
+        $supportedTargetLanguages = $this->loadSupportedLanguagesFromAPI();
 
         foreach ($supportedTargetLanguages as $supportedLanguage) {
             $this->apiSupportedLanguages['target'][] = $supportedLanguage['language'];
@@ -106,11 +111,14 @@ class DeeplService
 
         $cacheIdentifier = 'wv-deepl-supported-languages-source';
 
+        /*
         if (($supportedSourceLanguages = $this->cache->get($cacheIdentifier)) === false) {
             $supportedSourceLanguages = $this->loadSupportedLanguagesFromAPI('source');
 
             $this->cache->set($cacheIdentifier, $supportedSourceLanguages, [], 86400);
-        }
+        }*/
+
+        $supportedSourceLanguages = $this->loadSupportedLanguagesFromAPI('source');
 
         foreach ($supportedSourceLanguages as $supportedLanguage) {
             $this->apiSupportedLanguages['source'][] = $supportedLanguage['language'];

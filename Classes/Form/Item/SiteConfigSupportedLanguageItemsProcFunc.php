@@ -23,9 +23,15 @@ class SiteConfigSupportedLanguageItemsProcFunc
     {
         $supportedLanguages = $this->deeplService->apiSupportedLanguages['target'];
 
-        $configuration['items'][] = [];
+        $configuration['items'][] = [
+            'label' => '',
+            'value' => ''
+        ];
         foreach ($supportedLanguages as $supportedLanguage) {
-            $configuration['items'][] = [$supportedLanguage, $supportedLanguage];
+            $configuration['items'][] = [
+                'label' => $supportedLanguage,
+                'value' => $supportedLanguage
+            ];
         }
     }
 }

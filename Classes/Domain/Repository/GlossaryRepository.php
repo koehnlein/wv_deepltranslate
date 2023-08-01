@@ -10,7 +10,6 @@ use TYPO3\CMS\Backend\Configuration\TranslationConfigurationProvider;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Database\QueryGenerator;
 use TYPO3\CMS\Core\Exception\SiteNotFoundException;
 use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Site\SiteFinder;
@@ -221,21 +220,23 @@ class GlossaryRepository
         string $targetLanguage,
         array $page
     ): array {
+        $emptyGlossary = [
+            'uid' => 0,
+            'glossary_id' => '',
+            'glossary_name' => 'UNDEFINED',
+            'glossary_lastsync' => 0,
+            'glossary_ready' => 0,
+        ];
+
         if (empty($page)) {
-            return [
-                'uid' => 0,
-                'glossary_id' => '',
-                'glossary_name' => 'UNDEFINED',
-                'glossary_lastsync' => 0,
-                'glossary_ready' => 0,
-            ];
+            return $emptyGlossary;
         }
         $lowerSourceLang = strtolower($sourceLanguage);
         $lowerTargetLang = strtolower($targetLanguage);
         if (strlen($lowerTargetLang) > 2) {
             $lowerTargetLang = substr($lowerTargetLang, 0, 2);
         }
-        return $this->getGlossary($lowerSourceLang, $lowerTargetLang, $page['uid'], true);
+        return $this->getGlossary($lowerSourceLang, $lowerTargetLang, $page['uid'], true) ?? $emptyGlossary;
     }
 
     /**
@@ -467,8 +468,9 @@ class GlossaryRepository
         $site = GeneralUtility::makeInstance(SiteFinder::class)
             ->getSiteByPageId($pageId);
         $rootPage = $site->getRootPageId();
-        $allPages = GeneralUtility::makeInstance(QueryGenerator::class)
-            ->getTreeList($rootPage, 999);
+        /*$allPages = GeneralUtility::makeInstance(QueryGenerator::class)
+            ->getTreeList($rootPage, 999);*/
+        $allPages = implode(',', GeneralUtility::makeInstance(\TYPO3\CMS\Core\Domain\Repository\PageRepository::class)->getPageIdsRecursive([$rootPage], 999));
         $db = GeneralUtility::makeInstance(ConnectionPool::class)
             ->getQueryBuilderForTable('pages');
         $statement = $db
