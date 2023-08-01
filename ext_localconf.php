@@ -1,6 +1,6 @@
 <?php
 
-if (!defined('TYPO3_MODE')) {
+if (!defined('TYPO3')) {
     die();
 }
 
@@ -37,11 +37,11 @@ if (!defined('TYPO3_MODE')) {
     ];
 
     //xclass databaserecordlist for rendering custom checkboxes to toggle deepl selection in recordlist
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Recordlist\RecordList\DatabaseRecordList::class] = [
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Backend\RecordList\DatabaseRecordList::class] = [
         'className' => \WebVision\WvDeepltranslate\Override\DatabaseRecordList::class,
     ];
 
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Recordlist\Controller\RecordListController::class] = [
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Backend\Controller\RecordListController::class] = [
         'className' => \WebVision\WvDeepltranslate\Override\DeeplRecordListController::class,
     ];
 
@@ -55,7 +55,7 @@ if (!defined('TYPO3_MODE')) {
     }
 
     if (
-        TYPO3_MODE === 'BE'
+        TYPO3 === 'BE'
         && \WebVision\WvDeepltranslate\Utility\DeeplBackendUtility::isDeeplApiKeySet()
     ) {
         // overriding localization.js

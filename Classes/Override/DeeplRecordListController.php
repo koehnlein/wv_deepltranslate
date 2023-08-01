@@ -11,21 +11,22 @@ use TYPO3\CMS\Core\Database\Query\Restriction\WorkspaceRestriction;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-use TYPO3\CMS\Recordlist\Controller\RecordListController;
+use TYPO3\CMS\Backend\Controller\RecordListController;
 use WebVision\WvDeepltranslate\Service\DeeplGlossaryService;
 use WebVision\WvDeepltranslate\Utility\DeeplBackendUtility;
 
 class DeeplRecordListController extends RecordListController
 {
     /**
+     * @param array $siteLanguages
      * @param string $requestUri
      */
-    protected function languageSelector($requestUri): string
+    protected function languageSelector(array $siteLanguages, string $requestUri): string
     {
         if ($this->pageInfo['module'] === 'glossary') {
             return $this->buildGlossaryTranslationOptionDropdown($requestUri);
         }
-        $originalOutput = parent::languageSelector($requestUri);
+        $originalOutput = parent::languageSelector($siteLanguages, $requestUri);
 
         if ($originalOutput == '') {
             return $originalOutput;
@@ -36,7 +37,7 @@ class DeeplRecordListController extends RecordListController
         }
 
         $options = DeeplBackendUtility::buildTranslateDropdown(
-            $this->siteLanguages,
+            $siteLanguages,
             $this->id,
             $requestUri
         );
