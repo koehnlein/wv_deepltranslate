@@ -1,5 +1,8 @@
 <?php
 
+use Psr\Http\Message\ServerRequestInterface;
+use TYPO3\CMS\Core\Http\ApplicationType;
+
 if (!defined('TYPO3')) {
     die();
 }
@@ -52,15 +55,6 @@ if (!defined('TYPO3')) {
                 'className' => \WebVision\WvDeepltranslate\Override\CommandMapPostProcessingHook::class,
             ];
         }
-    }
-
-    if (
-        TYPO3 === 'BE'
-        && \WebVision\WvDeepltranslate\Utility\DeeplBackendUtility::isDeeplApiKeySet()
-    ) {
-        // overriding localization.js
-        $pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
-        $pageRenderer->loadRequireJsModule('TYPO3/CMS/WvDeepltranslate/Localization');
     }
 
     //add caching for DeepL API-supported Languages
