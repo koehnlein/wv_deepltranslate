@@ -13,6 +13,6 @@ return [
     ],
     'deepl-grey-logo' => [
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-        'source' => 'EXT:wv_deepltranslate/Resources/Public/deepl-grey.svg',
+        'source' => 'EXT:wv_deepltranslate/Resources/Public/Icons/deepl-grey.svg',
     ],
 ];
