@@ -53,7 +53,7 @@ return function (ContainerConfigurator $containerConfigurator, ContainerBuilder 
         );
 
     // add caching
-    $services->set('cache.tddeepltranslate')
+    /*$services->set('cache.tddeepltranslate')
         ->class(FrontendInterface::class)
         ->factory([service(CacheManager::class), 'getCache'])
         ->args(['tddeepltranslate']);
@@ -62,5 +62,5 @@ return function (ContainerConfigurator $containerConfigurator, ContainerBuilder 
         ->args(['cache', service('cache.tddeepltranslate')]);
     $services
         ->set(DeeplGlossaryService::class)
-        ->args(['cache', service('cache.tddeepltranslate')]);
+        ->args(['cache', service('cache.tddeepltranslate')]);*/
 };
