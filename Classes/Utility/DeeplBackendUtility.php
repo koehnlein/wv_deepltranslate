@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WebVision\WvDeepltranslate\Utility;
+namespace TimDreier\TdDeepltranslate\Utility;
 
 use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
@@ -18,10 +18,10 @@ use TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider;
 use TYPO3\CMS\Core\Imaging\IconRegistry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-use WebVision\WvDeepltranslate\Exception\LanguageIsoCodeNotFoundException;
-use WebVision\WvDeepltranslate\Exception\LanguageRecordNotFoundException;
-use WebVision\WvDeepltranslate\Service\DeeplGlossaryService;
-use WebVision\WvDeepltranslate\Service\LanguageService;
+use TimDreier\TdDeepltranslate\Exception\LanguageIsoCodeNotFoundException;
+use TimDreier\TdDeepltranslate\Exception\LanguageRecordNotFoundException;
+use TimDreier\TdDeepltranslate\Service\DeeplGlossaryService;
+use TimDreier\TdDeepltranslate\Service\LanguageService;
 
 class DeeplBackendUtility
 {
@@ -85,7 +85,7 @@ class DeeplBackendUtility
 
     public static function loadConfiguration(): void
     {
-        $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('wv_deepltranslate');
+        $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('td_deepltranslate');
         self::$apiKey = $extensionConfiguration['apiKey'];
         self::$deeplFormality = $extensionConfiguration['deeplFormality'];
         self::$apiUrl = $extensionConfiguration['apiUrl'];
@@ -116,7 +116,7 @@ class DeeplBackendUtility
         $title =
             LocalizationUtility::translate(
                 'backend.button.translate',
-                'wv_deepltranslate',
+                'td_deepltranslate',
                 [
                     htmlspecialchars($languageTitle),
                 ]
@@ -253,7 +253,7 @@ class DeeplBackendUtility
             if ($output !== '') {
                 $output = sprintf(
                     '<option value="">%s</option>%s',
-                    htmlspecialchars(LocalizationUtility::translate('backend.label', 'wv_deepltranslate')),
+                    htmlspecialchars(LocalizationUtility::translate('backend.label', 'td_deepltranslate')),
                     $output
                 );
             }

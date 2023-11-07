@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WebVision\WvDeepltranslate\Service;
+namespace TimDreier\TdDeepltranslate\Service;
 
 use GuzzleHttp\Exception\ClientException;
 use TYPO3\CMS\Core\Cache\CacheManager;
@@ -11,9 +11,9 @@ use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use WebVision\WvDeepltranslate\Client;
-use WebVision\WvDeepltranslate\Domain\Repository\GlossaryRepository;
-use WebVision\WvDeepltranslate\Utility\DeeplBackendUtility;
+use TimDreier\TdDeepltranslate\Client;
+use TimDreier\TdDeepltranslate\Domain\Repository\GlossaryRepository;
+use TimDreier\TdDeepltranslate\Utility\DeeplBackendUtility;
 
 class DeeplService
 {
@@ -44,7 +44,7 @@ class DeeplService
         ?FrontendInterface $cache = null,
         ?Client $client = null
     ) {
-        $this->cache = $cache ?? GeneralUtility::makeInstance(CacheManager::class)->getCache('wvdeepltranslate');
+        $this->cache = $cache ?? GeneralUtility::makeInstance(CacheManager::class)->getCache('tddeepltranslate');
         $this->client = $client ?? GeneralUtility::makeInstance(Client::class);
         $this->glossaryRepository = GeneralUtility::makeInstance(GlossaryRepository::class);
 
@@ -91,7 +91,7 @@ class DeeplService
 
     private function loadSupportedLanguages(): void
     {
-        $cacheIdentifier = 'wv-deepl-supported-languages-target';
+        $cacheIdentifier = 'td-deepl-supported-languages-target';
         if (($supportedTargetLanguages = $this->cache->get($cacheIdentifier)) === false) {
             $supportedTargetLanguages = $this->loadSupportedLanguagesFromAPI();
 
@@ -105,7 +105,7 @@ class DeeplService
             }
         }
 
-        $cacheIdentifier = 'wv-deepl-supported-languages-source';
+        $cacheIdentifier = 'td-deepl-supported-languages-source';
 
         if (($supportedSourceLanguages = $this->cache->get($cacheIdentifier)) === false) {
             $supportedSourceLanguages = $this->loadSupportedLanguagesFromAPI('source');

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace WebVision\WvDeepltranslate;
+namespace TimDreier\TdDeepltranslate;
 
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Http\RequestFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use WebVision\WvDeepltranslate\Exception\ClientNotValidUrlException;
+use TimDreier\TdDeepltranslate\Exception\ClientNotValidUrlException;
 
 final class Client
 {
@@ -152,7 +152,7 @@ final class Client
             [
                 'headers' => [
                     'Authorization' => sprintf('DeepL-Auth-Key %s', $this->configuration->getApiKey()),
-                    'User-Agent' => 'TYPO3.WvDeepltranslate/1.0',
+                    'User-Agent' => 'TYPO3.TdDeepltranslate/1.0',
                 ],
             ],
             $options

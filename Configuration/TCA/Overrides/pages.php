@@ -7,7 +7,7 @@ if (!defined('TYPO3')) {
 (static function (): void {
     $ll = function (string $languageKey) {
         return sprintf(
-            'LLL:EXT:wv_deepltranslate/Resources/Private/Language/locallang.xlf:%s',
+            'LLL:EXT:td_deepltranslate/Resources/Private/Language/locallang.xlf:%s',
             $languageKey
         );
     };
@@ -21,11 +21,11 @@ if (!defined('TYPO3')) {
         = 'apps-pagetree-folder-contains-glossary';
 
     $columns = [
-        'tx_wvdeepltranslate_content_not_checked' => [
+        'tx_tddeepltranslate_content_not_checked' => [
             'exclude' => 0,
             'l10n_display' => 'hideDiff',
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => $ll('pages.tx_wvdeepltranslate_content_not_checked'),
+            'label' => $ll('pages.tx_tddeepltranslate_content_not_checked'),
             'config' => [
                 'type' => 'check',
                 'items' => [
@@ -35,11 +35,11 @@ if (!defined('TYPO3')) {
                 ],
             ],
         ],
-        'tx_wvdeepltranslate_translated_time' => [
+        'tx_tddeepltranslate_translated_time' => [
             'exclude' => 0,
             'l10n_display' => 'hideDiff',
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => $ll('pages.tx_wvdeepltranslate_translated_time'),
+            'label' => $ll('pages.tx_tddeepltranslate_translated_time'),
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
@@ -59,7 +59,7 @@ if (!defined('TYPO3')) {
             'config' => [
                 'type' => 'inline',
                 'readOnly' => true,
-                'foreign_table' => 'tx_wvdeepltranslate_glossary',
+                'foreign_table' => 'tx_tddeepltranslate_glossary',
                 'foreign_field' => 'pid',
             ],
         ],
@@ -70,7 +70,7 @@ if (!defined('TYPO3')) {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
         'pages',
         'deepl_translate',
-        'tx_wvdeepltranslate_content_not_checked, tx_wvdeepltranslate_translated_time,glossary_information'
+        'tx_tddeepltranslate_content_not_checked, tx_tddeepltranslate_translated_time,glossary_information'
     );
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(

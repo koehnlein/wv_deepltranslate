@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
-	<file t3:id="1415814785" source-language="en" target-language="fr" datatype="plaintext" original="messages" date="2022-07-15T18:19:55Z" product-name="wv_deepltranslate">
+	<file t3:id="1415814785" source-language="en" target-language="fr" datatype="plaintext" original="messages" date="2022-07-15T18:19:55Z" product-name="td_deepltranslate">
 		<header/>
 		<body>
 			<trans-unit id="localize.educate.deepltranslate" xml:space="preserve">
@@ -16,11 +16,11 @@
 				<target>DeepL</target>
 			</trans-unit>
 
-			<trans-unit id="pages.tx_wvdeepltranslate_content_not_checked">
+			<trans-unit id="pages.tx_tddeepltranslate_content_not_checked">
 				<source>DeepL Translated Content was not checked</source>
 				<target>Le contenu traduit par DeepL n'a pas été vérifié</target>
 			</trans-unit>
-			<trans-unit id="pages.tx_wvdeepltranslate_translated_time">
+			<trans-unit id="pages.tx_tddeepltranslate_translated_time">
 				<source>Last Translated Date</source>
 				<target>Date de la dernière traduction</target>
 			</trans-unit>

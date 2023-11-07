@@ -66,6 +66,7 @@ class Localization {
                                             "</div>" +
                                             "</div>"
                                         )
+                                        availableLocalizationModes.push("localize")
                                         actions.push(
                                             '<div class="row">' +
                                             '<div class="col-sm-3">' +
@@ -81,6 +82,7 @@ class Localization {
                                             "</div>" +
                                             "</div>"
                                         )
+                                        availableLocalizationModes.push("mode_deepltranslateauto")
                                         actions.push(
                                             '<div class="row">' +
                                             '<div class="col-sm-3">' +
@@ -96,7 +98,7 @@ class Localization {
                                             "</div>" +
                                             "</div>"
                                         )
-                                        availableLocalizationModes.push("localize")
+                                        availableLocalizationModes.push("localizedeepl")
                                     }
 
                                     if ($triggerButton.data("allowCopy")) {
@@ -478,4 +480,4 @@ class Localization {
     }
 }
 
-export default new Localization;
+export default new Localization()

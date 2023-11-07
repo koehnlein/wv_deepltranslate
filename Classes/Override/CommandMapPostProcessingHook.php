@@ -1,6 +1,6 @@
 <?php
 
-namespace WebVision\WvDeepltranslate\Override;
+namespace TimDreier\TdDeepltranslate\Override;
 
 /*
  * This file is part of the TYPO3 CMS project.

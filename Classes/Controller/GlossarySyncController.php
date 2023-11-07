@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WebVision\WvDeepltranslate\Controller;
+namespace TimDreier\TdDeepltranslate\Controller;
 
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Exception;
@@ -11,9 +11,9 @@ use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-use WebVision\WvDeepltranslate\Domain\Repository\GlossaryRepository;
-use WebVision\WvDeepltranslate\Exception\InvalidArgumentException;
-use WebVision\WvDeepltranslate\Service\DeeplGlossaryService;
+use TimDreier\TdDeepltranslate\Domain\Repository\GlossaryRepository;
+use TimDreier\TdDeepltranslate\Exception\InvalidArgumentException;
+use TimDreier\TdDeepltranslate\Service\DeeplGlossaryService;
 
 class GlossarySyncController
 {
@@ -48,11 +48,11 @@ class GlossarySyncController
             FlashMessage::class,
             LocalizationUtility::translate(
                 'glossary.sync.message',
-                'wv_deepltranslate'
+                'td_deepltranslate'
             ),
             LocalizationUtility::translate(
                 'glossary.sync.title',
-                'wv_deepltranslate'
+                'td_deepltranslate'
             ),
             FlashMessage::OK,
             true

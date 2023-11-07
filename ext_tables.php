@@ -7,8 +7,8 @@ if (!defined('TYPO3')) {
 (function () {
     $iconProviderConfiguration = [
         \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class => [
-            'actions-localize-deepl' => ['source' => 'EXT:wv_deepltranslate/Resources/Public/Icons/actions-localize-deepl.svg'],
-            'actions-localize-google' => ['source' => 'EXT:wv_deepltranslate/Resources/Public/Icons/actions-localize-google.svg'],
+            'actions-localize-deepl' => ['source' => 'EXT:td_deepltranslate/Resources/Public/Icons/actions-localize-deepl.svg'],
+            'actions-localize-google' => ['source' => 'EXT:td_deepltranslate/Resources/Public/Icons/actions-localize-google.svg'],
         ],
     ];
 
@@ -19,11 +19,11 @@ if (!defined('TYPO3')) {
         }
     }
 
-    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:backend/Resources/Private/Language/locallang_layout.xlf'][] = 'EXT:wv_deepltranslate/Resources/Private/Language/locallang.xlf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:backend/Resources/Private/Language/locallang_layout.xlf'][] = 'EXT:td_deepltranslate/Resources/Private/Language/locallang.xlf';
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_wvdeepltranslate_domain_model_glossaries', 'EXT:wv_deepltranslate/Resources/Private/Language/locallang_csh_tx_wvdeepltranslate_domain_model_glossaries.xlf');
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_wvdeepltranslate_domain_model_glossaries');
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_tddeepltranslate_domain_model_glossaries', 'EXT:td_deepltranslate/Resources/Private/Language/locallang_csh_tx_tddeepltranslate_domain_model_glossaries.xlf');
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_tddeepltranslate_domain_model_glossaries');
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_wvdeepltranslate_domain_model_glossariessync', 'EXT:wv_deepltranslate/Resources/Private/Language/locallang_csh_tx_wvdeepltranslate_domain_model_glossariessync.xlf');
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_wvdeepltranslate_domain_model_glossariessync');
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_tddeepltranslate_domain_model_glossariessync', 'EXT:td_deepltranslate/Resources/Private/Language/locallang_csh_tx_tddeepltranslate_domain_model_glossariessync.xlf');
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_tddeepltranslate_domain_model_glossariessync');
 })();

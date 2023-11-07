@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WebVision\WvDeepltranslate\Override;
+namespace TimDreier\TdDeepltranslate\Override;
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -28,7 +28,7 @@ use TYPO3\CMS\Core\Imaging\Icon;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Versioning\VersionState;
-use WebVision\WvDeepltranslate\Service\DeeplService;
+use TimDreier\TdDeepltranslate\Service\DeeplService;
 
 /**
  * LocalizationController handles the AJAX requests for record localization
@@ -52,7 +52,7 @@ class LocalizationController extends \TYPO3\CMS\Backend\Controller\Page\Localiza
 
         $this->pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
         $this->deeplService = GeneralUtility::makeInstance(DeeplService::class);
-        $this->pageRenderer->addInlineLanguageLabelFile('EXT:wv_deepltranslate/Resources/Private/Language/locallang.xlf');
+        $this->pageRenderer->addInlineLanguageLabelFile('EXT:td_deepltranslate/Resources/Private/Language/locallang.xlf');
     }
 
     /**

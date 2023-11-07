@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WebVision\WvDeepltranslate\Service;
+namespace TimDreier\TdDeepltranslate\Service;
 
 use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\Exception\ClientException;
@@ -13,9 +13,9 @@ use TYPO3\CMS\Core\Exception\SiteNotFoundException;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use WebVision\WvDeepltranslate\Client;
-use WebVision\WvDeepltranslate\Domain\Repository\GlossaryRepository;
-use WebVision\WvDeepltranslate\Exception\GlossaryEntriesNotExistException;
+use TimDreier\TdDeepltranslate\Client;
+use TimDreier\TdDeepltranslate\Domain\Repository\GlossaryRepository;
+use TimDreier\TdDeepltranslate\Exception\GlossaryEntriesNotExistException;
 
 class DeeplGlossaryService
 {
@@ -30,7 +30,7 @@ class DeeplGlossaryService
         ?Client $client = null,
         ?GlossaryRepository $glossaryRepository = null
     ) {
-        $this->cache = $cache ?? GeneralUtility::makeInstance(CacheManager::class)->getCache('wvdeepltranslate');
+        $this->cache = $cache ?? GeneralUtility::makeInstance(CacheManager::class)->getCache('tddeepltranslate');
         $this->client = $client ?? GeneralUtility::makeInstance(Client::class);
         $this->glossaryRepository = $glossaryRepository ?? GeneralUtility::makeInstance(GlossaryRepository::class);
     }
@@ -180,7 +180,7 @@ class DeeplGlossaryService
      */
     public function getPossibleGlossaryLanguageConfig(): array
     {
-        $cacheIdentifier = 'wv-deepl-glossary-pairs';
+        $cacheIdentifier = 'td-deepl-glossary-pairs';
         if (($pairMappingArray = $this->cache->get($cacheIdentifier)) !== false) {
             return $pairMappingArray;
         }

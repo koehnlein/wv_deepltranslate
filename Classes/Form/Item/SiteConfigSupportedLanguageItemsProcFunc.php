@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace WebVision\WvDeepltranslate\Form\Item;
+namespace TimDreier\TdDeepltranslate\Form\Item;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use WebVision\WvDeepltranslate\Service\DeeplService;
+use TimDreier\TdDeepltranslate\Service\DeeplService;
 
 class SiteConfigSupportedLanguageItemsProcFunc
 {

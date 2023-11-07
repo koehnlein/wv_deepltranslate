@@ -5,10 +5,10 @@
 ================
 
 :Extension key:
-   wv_deepltranslate
+   td_deepltranslate
 
 :Package name:
-   web-vision/wv_deepltranslate
+   timdreier/td-deepltranslate
 
 :Version:
    |release|

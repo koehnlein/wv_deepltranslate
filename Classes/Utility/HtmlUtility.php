@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WebVision\WvDeepltranslate\Utility;
+namespace TimDreier\TdDeepltranslate\Utility;
 
 class HtmlUtility
 {

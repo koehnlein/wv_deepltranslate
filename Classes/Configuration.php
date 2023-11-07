@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WebVision\WvDeepltranslate;
+namespace TimDreier\TdDeepltranslate;
 
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -26,7 +26,7 @@ class Configuration
 
     public function __construct()
     {
-        $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('wv_deepltranslate');
+        $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('td_deepltranslate');
 
         if (isset($extensionConfiguration['apiKey'])) {
             $this->apiKey = (string)$extensionConfiguration['apiKey'] ?? '';

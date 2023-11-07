@@ -3,7 +3,7 @@
 Introduction
 ============
 
-This chapter gives you a basic introduction about the TYPO3 CMS extension "*wv_deepltranslate*".
+This chapter gives you a basic introduction about the TYPO3 CMS extension "*td_deepltranslate*".
 
 .. toctree::
    :maxdepth: 5

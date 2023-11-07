@@ -1,6 +1,6 @@
 <?php
 
-namespace WebVision\WvDeepltranslate\Hooks;
+namespace TimDreier\TdDeepltranslate\Hooks;
 
 /***************************************************************
  *  Copyright notice

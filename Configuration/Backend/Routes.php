@@ -3,6 +3,6 @@
 return [
     'glossaryupdate' => [
         'path' => '/glossary',
-        'target' => WebVision\WvDeepltranslate\Controller\GlossarySyncController::class . '::update',
+        'target' => TimDreier\TdDeepltranslate\Controller\GlossarySyncController::class . '::update',
     ],
 ];

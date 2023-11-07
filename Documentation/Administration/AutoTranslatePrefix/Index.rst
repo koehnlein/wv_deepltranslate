@@ -23,11 +23,11 @@ To make this easy can also be used in the extension Partial.
 
 ..  code-block:: html
 
-    <f:if condition="{page.tx_wvdeepltranslate_content_not_checked}" >
+    <f:if condition="{page.tx_tddeepltranslate_content_not_checked}" >
         <div style="background: #006494; border: #0000cc 1px solid; color: #fff; padding: 10px; text-align: center">
-            <f:translate key="LLL:EXT:wv_deepltranslate/Resources/Private/Language/locallang.xlf:preview.flag" />
-            <f:if condition="{page.tx_wvdeepltranslate_translated_time} > 0" >
-                <f:format.date format="{dateFormat}">{page.tx_wvdeepltranslate_translated_time}</f:format.date>
+            <f:translate key="LLL:EXT:td_deepltranslate/Resources/Private/Language/locallang.xlf:preview.flag" />
+            <f:if condition="{page.tx_tddeepltranslate_translated_time} > 0" >
+                <f:format.date format="{dateFormat}">{page.tx_tddeepltranslate_translated_time}</f:format.date>
             </f:if>
         </div>
     </f:if>

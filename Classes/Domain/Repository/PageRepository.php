@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WebVision\WvDeepltranslate\Domain\Repository;
+namespace TimDreier\TdDeepltranslate\Domain\Repository;
 
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
@@ -20,8 +20,8 @@ final class PageRepository
         ->update(
             'pages',
             [
-                'tx_wvdeepltranslate_content_not_checked' => 1,
-                'tx_wvdeepltranslate_translated_time' => time(),
+                'tx_tddeepltranslate_content_not_checked' => 1,
+                'tx_tddeepltranslate_translated_time' => time(),
             ],
             [
                 'l10n_parent' => $pageId,

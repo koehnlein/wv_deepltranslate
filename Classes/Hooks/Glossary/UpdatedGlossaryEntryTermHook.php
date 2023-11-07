@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace WebVision\WvDeepltranslate\Hooks\Glossary;
+namespace TimDreier\TdDeepltranslate\Hooks\Glossary;
 
 use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
-use WebVision\WvDeepltranslate\Domain\Repository\GlossaryEntryRepository;
-use WebVision\WvDeepltranslate\Domain\Repository\GlossaryRepository;
+use TimDreier\TdDeepltranslate\Domain\Repository\GlossaryEntryRepository;
+use TimDreier\TdDeepltranslate\Domain\Repository\GlossaryRepository;
 
 class UpdatedGlossaryEntryTermHook
 {
@@ -41,7 +41,7 @@ class UpdatedGlossaryEntryTermHook
             return;
         }
 
-        if ($table !== 'tx_wvdeepltranslate_glossaryentry') {
+        if ($table !== 'tx_tddeepltranslate_glossaryentry') {
             return;
         }
 
@@ -56,11 +56,11 @@ class UpdatedGlossaryEntryTermHook
         $flashMessage = new FlashMessage(
             LocalizationUtility::translate(
                 'glossary.not-sync.message',
-                'wv_deepltranslate'
+                'td_deepltranslate'
             ),
             LocalizationUtility::translate(
                 'glossary.not-sync.title',
-                'wv_deepltranslate'
+                'td_deepltranslate'
             ),
             FlashMessage::INFO,
             true

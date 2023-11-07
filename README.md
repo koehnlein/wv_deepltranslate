@@ -1,14 +1,11 @@
-[![Latest Stable Version](https://poser.pugx.org/web-vision/wv_deepltranslate/v/stable.svg)](https://packagist.org/packages/web-vision/wv_deepltranslate)
-[![License](http://poser.pugx.org/web-vision/wv_deepltranslate/license)](https://packagist.org/packages/web-vision/wv_deepltranslate)
-[![TYPO3 11.5](https://img.shields.io/badge/TYPO3-11.5-green.svg?style=flat-square)](https://get.typo3.org/version/11)
-[![Total Downloads](https://poser.pugx.org/web-vision/wv_deepltranslate/downloads.svg)](https://packagist.org/packages/web-vision/wv_deepltranslate)
-[![Monthly Downloads](https://poser.pugx.org/web-vision/wv_deepltranslate/d/monthly)](https://packagist.org/packages/web-vision/wv_deepltranslate)
+# TYPO3 extension `td_deepltranslate`
 
-# TYPO3 extension `wv_deepltranslate`
+This extension is a fork of [wv_deepltranslate](https://github.com/web-vision/wv_deepltranslate/) which provides automated translation of pages, content and records
+to languages supported by [DeepL](https://www.deepl.com/de/docs-api/) in TYPO3 v12.
 
+I created this fork to use deepl_translate in my private TYPO3 12 projects where I have no budget for the early access program of web-vision.
 
-This extension provides automated translation of pages, content and records
-to languages supported by [DeepL](https://www.deepl.com/de/docs-api/).
+If you really depend on the extension better use the [early access program](https://www.web-vision.de/typo3-automatische-uebersetzungen-mit-deepl.html) web-vision.
 
 ## Features
 
@@ -23,22 +20,11 @@ to languages supported by [DeepL](https://www.deepl.com/de/docs-api/).
 
 ## Installation
 
-Install with your favour:
-
-* [TER](https://extensions.typo3.org/extension/wv_deepltranslate/)
-* Extension Manager
-* composer
-
-We prefer composer installation:
-```bash
-composer req web-vision/wv_deepltranslate
-```
+Install with `composer req timdreier/td_deepltranslate`.
 
 |                  | URL                                                               |
 |------------------|-------------------------------------------------------------------|
-| **Repository:**  | https://github.com/web-vision/wv_deepltranslate                   |
-| **Read online:** | https://docs.typo3.org/p/web-vision/wv_deepltranslate/main/en-us/ |
-| **TER:**         | https://extensions.typo3.org/extension/wv_deepltranslate/         |
+| **Repository:**  | https://github.com/timdreier/td_deepltranslate                    |
 
 ## Sponsors
 We appreciate very much the sponsorships of the developments and features in

@@ -1,9 +1,0 @@
-module.tx_backend.view {
-    partialRootPaths {
-        10 = EXT:wv_deepltranslate/Resources/Private/Backend/Partials
-    }
-}
-
-[typo3.version < "11.5"]
-    module.tx_backend.view.partialRootPaths.10 = EXT:wv_deepltranslate/Resources/Private/Backend/v10/Partials
-[END]

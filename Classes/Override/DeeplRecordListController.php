@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WebVision\WvDeepltranslate\Override;
+namespace TimDreier\TdDeepltranslate\Override;
 
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
@@ -12,8 +12,8 @@ use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3\CMS\Backend\Controller\RecordListController;
-use WebVision\WvDeepltranslate\Service\DeeplGlossaryService;
-use WebVision\WvDeepltranslate\Utility\DeeplBackendUtility;
+use TimDreier\TdDeepltranslate\Service\DeeplGlossaryService;
+use TimDreier\TdDeepltranslate\Utility\DeeplBackendUtility;
 
 class DeeplRecordListController extends RecordListController
 {
@@ -114,7 +114,7 @@ class DeeplRecordListController extends RecordListController
         $output = '<option value="">' . htmlspecialchars(
             LocalizationUtility::translate(
                 'pages.glossary.translate',
-                'wv_deepltranslate'
+                'td_deepltranslate'
             )
         ) . '</option>';
 

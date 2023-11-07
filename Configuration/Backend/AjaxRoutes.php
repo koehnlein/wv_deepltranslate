@@ -10,6 +10,6 @@
 return [
     'deepl_check_configuration' => [
         'path' => '/deepl/check-configuration',
-        'target' => WebVision\WvDeepltranslate\Controller\Backend\AjaxController::class . '::checkExtensionConfiguration',
+        'target' => TimDreier\TdDeepltranslate\Controller\Backend\AjaxController::class . '::checkExtensionConfiguration',
     ],
 ];
