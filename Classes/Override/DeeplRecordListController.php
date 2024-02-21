@@ -24,7 +24,7 @@ class DeeplRecordListController extends RecordListController
     protected function languageSelector(array $siteLanguages, string $requestUri): string
     {
         if ($this->pageInfo['module'] === 'glossary') {
-            return $this->buildGlossaryTranslationOptionDropdown($requestUri);
+            return $this->buildGlossaryTranslationOptionDropdown($requestUri, $siteLanguages);
         }
         $originalOutput = parent::languageSelector($siteLanguages, $requestUri);
 
@@ -60,7 +60,7 @@ class DeeplRecordListController extends RecordListController
             . '</div>';
     }
 
-    private function buildGlossaryTranslationOptionDropdown(string $requestUri): string
+    private function buildGlossaryTranslationOptionDropdown(string $requestUri, array $siteLanguages): string
     {
         if (!$this->getBackendUserAuthentication()->check('tables_modify', 'pages')) {
             return '';
@@ -75,7 +75,7 @@ class DeeplRecordListController extends RecordListController
         $possibleGlossaryEntryLanguages = $possiblePairs[$defaultLanguageIsoCode] ?? [];
 
         $availableTranslations = [];
-        foreach ($this->siteLanguages as $siteLanguage) {
+        foreach ($siteLanguages as $siteLanguage) {
             if ($siteLanguage->getLanguageId() === 0) {
                 continue;
             }
