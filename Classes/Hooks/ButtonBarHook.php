@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TimDreier\TdDeepltranslate\Hooks;
+namespace WebVision\WvDeepltranslate\Hooks;
 
 use TYPO3\CMS\Backend\Routing\Exception\RouteNotFoundException;
 use TYPO3\CMS\Backend\Routing\UriBuilder;
@@ -39,12 +39,12 @@ class ButtonBarHook
             if (
                 isset($page['module']) && $page['module'] === 'glossary'
                 && $this->getBackendUserAuthentication()
-                    ->check('tables_modify', 'tx_tddeepltranslate_glossaryentry')
+                    ->check('tables_modify', 'tx_wvdeepltranslate_glossaryentry')
             ) {
                 $parameters = $this->buildParamsArrayForListView($page['uid']);
                 $title = LocalizationUtility::translate(
                     'glossary.sync.button.all',
-                    'td_deepltranslate'
+                    'wv_deepltranslate'
                 );
                 // Style button
                 $iconFactory = GeneralUtility::makeInstance(IconFactory::class);

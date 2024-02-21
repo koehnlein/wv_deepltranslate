@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TimDreier\TdDeepltranslate\Command;
+namespace WebVision\WvDeepltranslate\Command;
 
 use Doctrine\DBAL\DBALException;
 use Symfony\Component\Console\Command\Command;
@@ -13,8 +13,8 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TimDreier\TdDeepltranslate\Domain\Repository\GlossaryRepository;
-use TimDreier\TdDeepltranslate\Service\DeeplGlossaryService;
+use WebVision\WvDeepltranslate\Domain\Repository\GlossaryRepository;
+use WebVision\WvDeepltranslate\Service\DeeplGlossaryService;
 
 class GlossaryCleanupCommand extends Command
 {

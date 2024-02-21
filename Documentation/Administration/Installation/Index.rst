@@ -13,14 +13,14 @@ extension by one of the following methods:
 
     .. code-block:: bash
 
-        composer require timdreier/td-deepltranslate
+        composer require web-vision/wv_deepltranslate
 
     in your TYPO3 installation.
 
 #.  **Get it from the Extension Manager**:
     Switch to the module :guilabel:`Admin Tools > Extensions`.
     Switch to :guilabel:`Get Extensions` and search for the extension key
-    *td_deepltranslate* and import the extension from the repository.
+    *wv_deepltranslate* and import the extension from the repository.
 
 #. **Get it from typo3.org**:
     You can always get current version from `TER`_ by downloading the zip
@@ -31,7 +31,7 @@ and :ref:`configure <extensionConfiguration>` it.
 Inside your own site configuration follow the instructions for
 :ref:`table configuration <tableConfiguration>`.
 
-.. _TER: https://extensions.typo3.org/extension/td_deepltranslate
+.. _TER: https://extensions.typo3.org/extension/wv_deepltranslate
 
 Compatibility
 -------------

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace TimDreier\TdDeepltranslate\ViewHelpers;
+namespace WebVision\WvDeepltranslate\ViewHelpers;
 
 use TYPO3\CMS\Backend\View\PageLayoutContext;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TimDreier\TdDeepltranslate\Utility\DeeplBackendUtility;
+use WebVision\WvDeepltranslate\Utility\DeeplBackendUtility;
 
 class DeeplTranslateViewHelper extends AbstractViewHelper
 {

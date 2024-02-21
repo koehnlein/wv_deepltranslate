@@ -32,7 +32,7 @@ $EM_CONF[$_EXTKEY] = [
     ],
     'autoload' => [
         'psr-4' => [
-            'TimDreier\\TdDeepltranslate\\' => 'Classes',
+            'WebVision\\WvDeepltranslate\\' => 'Classes',
         ],
     ],
 ];

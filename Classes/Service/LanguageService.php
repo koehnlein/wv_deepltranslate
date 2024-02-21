@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace TimDreier\TdDeepltranslate\Service;
+namespace WebVision\WvDeepltranslate\Service;
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Exception\SiteNotFoundException;
 use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TimDreier\TdDeepltranslate\Exception\LanguageIsoCodeNotFoundException;
-use TimDreier\TdDeepltranslate\Exception\LanguageRecordNotFoundException;
+use WebVision\WvDeepltranslate\Exception\LanguageIsoCodeNotFoundException;
+use WebVision\WvDeepltranslate\Exception\LanguageRecordNotFoundException;
 
 class LanguageService
 {

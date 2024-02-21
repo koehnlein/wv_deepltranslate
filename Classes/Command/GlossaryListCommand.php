@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TimDreier\TdDeepltranslate\Command;
+namespace WebVision\WvDeepltranslate\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
@@ -10,7 +10,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TimDreier\TdDeepltranslate\Service\DeeplGlossaryService;
+use WebVision\WvDeepltranslate\Service\DeeplGlossaryService;
 
 class GlossaryListCommand extends Command
 {

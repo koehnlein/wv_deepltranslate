@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TimDreier\TdDeepltranslate\Domain\Repository;
+namespace WebVision\WvDeepltranslate\Domain\Repository;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -25,11 +25,11 @@ class GlossaryEntryRepository
     public function findEntriesByGlossary(int $parentId): array
     {
         $connection = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getConnectionForTable('tx_tddeepltranslate_glossaryentry');
+            ->getConnectionForTable('tx_wvdeepltranslate_glossaryentry');
 
         $result = $connection->select(
             ['*'],
-            'tx_tddeepltranslate_glossaryentry',
+            'tx_wvdeepltranslate_glossaryentry',
             [
                 'glossary' => $parentId,
             ]
@@ -44,11 +44,11 @@ class GlossaryEntryRepository
     public function findEntryByUid(int $uid): array
     {
         $connection = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getConnectionForTable('tx_tddeepltranslate_glossaryentry');
+            ->getConnectionForTable('tx_wvdeepltranslate_glossaryentry');
 
         $result = $connection->select(
             ['*'],
-            'tx_tddeepltranslate_glossaryentry',
+            'tx_wvdeepltranslate_glossaryentry',
             [
                 'uid' => $uid,
             ]

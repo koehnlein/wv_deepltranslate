@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace TimDreier\TdDeepltranslate\Hooks;
+namespace WebVision\WvDeepltranslate\Hooks;
 
 use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Messaging\FlashMessage;
 use TYPO3\CMS\Core\Messaging\FlashMessageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TimDreier\TdDeepltranslate\Domain\Repository\PageRepository;
-use TimDreier\TdDeepltranslate\Exception\LanguageIsoCodeNotFoundException;
-use TimDreier\TdDeepltranslate\Exception\LanguageRecordNotFoundException;
-use TimDreier\TdDeepltranslate\Service\DeeplService;
-use TimDreier\TdDeepltranslate\Service\LanguageService;
+use WebVision\WvDeepltranslate\Domain\Repository\PageRepository;
+use WebVision\WvDeepltranslate\Exception\LanguageIsoCodeNotFoundException;
+use WebVision\WvDeepltranslate\Exception\LanguageRecordNotFoundException;
+use WebVision\WvDeepltranslate\Service\DeeplService;
+use WebVision\WvDeepltranslate\Service\LanguageService;
 
 class TranslateHook
 {

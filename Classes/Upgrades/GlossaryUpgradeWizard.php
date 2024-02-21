@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TimDreier\TdDeepltranslate\Upgrades;
+namespace WebVision\WvDeepltranslate\Upgrades;
 
 use Doctrine\DBAL\DBALException;
 use Doctrine\DBAL\Platforms\PostgreSQL94Platform;
@@ -28,7 +28,7 @@ class GlossaryUpgradeWizard implements UpgradeWizardInterface, ChattyInterface
      */
     public function getIdentifier(): string
     {
-        return 'tdDeepltranslate_updateGlossary';
+        return 'wvDeepltranslate_updateGlossary';
     }
 
     /**
@@ -56,11 +56,11 @@ class GlossaryUpgradeWizard implements UpgradeWizardInterface, ChattyInterface
         $this->output->writeln('<info>Preparing migration of entries</info>');
 
         $connection = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getQueryBuilderForTable('tx_tddeepltranslate_domain_model_glossaries');
+            ->getQueryBuilderForTable('tx_wvdeepltranslate_domain_model_glossaries');
         $connection->getRestrictions()->removeAll();
         $result = $connection
             ->select('*')
-            ->from('tx_tddeepltranslate_domain_model_glossaries')
+            ->from('tx_wvdeepltranslate_domain_model_glossaries')
             ->executeQuery()
             ->fetchAllAssociative();
 
@@ -73,9 +73,9 @@ class GlossaryUpgradeWizard implements UpgradeWizardInterface, ChattyInterface
         }
 
         $insert = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getConnectionForTable('tx_tddeepltranslate_glossaryentry');
+            ->getConnectionForTable('tx_wvdeepltranslate_glossaryentry');
         $inserted = $insert->bulkInsert(
-            'tx_tddeepltranslate_glossaryentry',
+            'tx_wvdeepltranslate_glossaryentry',
             $updateGlossary,
             array_keys($updateGlossary[0])
         );
@@ -84,11 +84,11 @@ class GlossaryUpgradeWizard implements UpgradeWizardInterface, ChattyInterface
 
         $this->output->writeln('<info>Preparing migration of glossaries</info>');
         $connection = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getQueryBuilderForTable('tx_tddeepltranslate_domain_model_glossariessync');
+            ->getQueryBuilderForTable('tx_wvdeepltranslate_domain_model_glossariessync');
         $connection->getRestrictions()->removeAll();
         $result = $connection
             ->select('*')
-            ->from('tx_tddeepltranslate_domain_model_glossariessync')
+            ->from('tx_wvdeepltranslate_domain_model_glossariessync')
             ->executeQuery()
             ->fetchAllAssociative();
 
@@ -99,10 +99,10 @@ class GlossaryUpgradeWizard implements UpgradeWizardInterface, ChattyInterface
         }
 
         $insert = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getConnectionForTable('tx_tddeepltranslate_glossary');
+            ->getConnectionForTable('tx_wvdeepltranslate_glossary');
 
         $inserted = $insert->bulkInsert(
-            'tx_tddeepltranslate_glossary',
+            'tx_wvdeepltranslate_glossary',
             $updateGlossary,
             array_keys($updateGlossary[0])
         );
@@ -126,8 +126,8 @@ class GlossaryUpgradeWizard implements UpgradeWizardInterface, ChattyInterface
             )
         );
         $escapeSuffix = $escapeFixNeeded ? sprintf(' ESCAPE %s', $db->quote('\\')) : '';
-        $v1 = $db->escapeLikeWildcards('tx_tddeepltranslate_domain_model_glossariessync');
-        $v2 = $db->escapeLikeWildcards('tx_tddeepltranslate_domain_model_glossaries');
+        $v1 = $db->escapeLikeWildcards('tx_wvdeepltranslate_domain_model_glossariessync');
+        $v2 = $db->escapeLikeWildcards('tx_wvdeepltranslate_domain_model_glossaries');
 
         $statement = $db
             ->select('*')
@@ -158,30 +158,30 @@ class GlossaryUpgradeWizard implements UpgradeWizardInterface, ChattyInterface
         foreach ($result as $group) {
             $replaced = false;
             $selectTables = GeneralUtility::trimExplode(',', $group['tables_select']);
-            $glossaryKey = array_search('tx_tddeepltranslate_domain_model_glossaries', $selectTables);
-            $syncKey = array_search('tx_tddeepltranslate_domain_model_glossariessync', $selectTables);
+            $glossaryKey = array_search('tx_wvdeepltranslate_domain_model_glossaries', $selectTables);
+            $syncKey = array_search('tx_wvdeepltranslate_domain_model_glossariessync', $selectTables);
 
             if ($glossaryKey !== false) {
-                $selectTables[$glossaryKey] = 'tx_tddeepltranslate_glossaryentry';
+                $selectTables[$glossaryKey] = 'tx_wvdeepltranslate_glossaryentry';
                 $replaced = true;
             }
 
             if ($syncKey !== false) {
-                $selectTables[$syncKey] = 'tx_tddeepltranslate_glossary';
+                $selectTables[$syncKey] = 'tx_wvdeepltranslate_glossary';
                 $replaced = true;
             }
 
             $modifyTables = GeneralUtility::trimExplode(',', $group['tables_modify']);
-            $glossaryKey = array_search('tx_tddeepltranslate_domain_model_glossaries', $modifyTables);
-            $syncKey = array_search('tx_tddeepltranslate_domain_model_glossariessync', $modifyTables);
+            $glossaryKey = array_search('tx_wvdeepltranslate_domain_model_glossaries', $modifyTables);
+            $syncKey = array_search('tx_wvdeepltranslate_domain_model_glossariessync', $modifyTables);
 
             if ($glossaryKey !== false) {
-                $modifyTables[$glossaryKey] = 'tx_tddeepltranslate_glossaryentry';
+                $modifyTables[$glossaryKey] = 'tx_wvdeepltranslate_glossaryentry';
                 $replaced = true;
             }
 
             if ($syncKey !== false) {
-                $modifyTables[$syncKey] = 'tx_tddeepltranslate_glossary';
+                $modifyTables[$syncKey] = 'tx_wvdeepltranslate_glossary';
                 $replaced = true;
             }
 
@@ -211,7 +211,7 @@ class GlossaryUpgradeWizard implements UpgradeWizardInterface, ChattyInterface
             ->set('module', 'glossary')
             ->where(
                 $pagesQueryBuilder->expr()->eq('doktype', 254),
-                $pagesQueryBuilder->expr()->eq('module', $pagesQueryBuilder->createNamedParameter('td_deepltranslate'))
+                $pagesQueryBuilder->expr()->eq('module', $pagesQueryBuilder->createNamedParameter('wv_deepltranslate'))
             )
             ->executeStatement();
 
@@ -235,18 +235,18 @@ class GlossaryUpgradeWizard implements UpgradeWizardInterface, ChattyInterface
             ->getConnectionByName(ConnectionPool::DEFAULT_CONNECTION_NAME)
             ->getSchemaManager();
 
-        if (!$schemaManger->tablesExist('tx_tddeepltranslate_domain_model_glossaries')
-            || !$schemaManger->tablesExist('tx_tddeepltranslate_domain_model_glossariessync')
+        if (!$schemaManger->tablesExist('tx_wvdeepltranslate_domain_model_glossaries')
+            || !$schemaManger->tablesExist('tx_wvdeepltranslate_domain_model_glossariessync')
         ) {
             return false;
         }
 
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
-            ->getQueryBuilderForTable('tx_tddeepltranslate_domain_model_glossaries');
+            ->getQueryBuilderForTable('tx_wvdeepltranslate_domain_model_glossaries');
         $queryBuilder->getRestrictions()->removeAll();
         $count = (int)$queryBuilder
             ->count('*')
-            ->from('tx_tddeepltranslate_domain_model_glossaries')
+            ->from('tx_wvdeepltranslate_domain_model_glossaries')
             ->executeQuery()
             ->fetchOne();
 

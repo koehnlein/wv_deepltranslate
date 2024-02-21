@@ -5,11 +5,11 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface;
-use TimDreier\TdDeepltranslate\Command\GlossaryCleanupCommand;
-use TimDreier\TdDeepltranslate\Command\GlossaryListCommand;
-use TimDreier\TdDeepltranslate\Command\GlossarySyncCommand;
-use TimDreier\TdDeepltranslate\Service\DeeplGlossaryService;
-use TimDreier\TdDeepltranslate\Service\DeeplService;
+use WebVision\WvDeepltranslate\Command\GlossaryCleanupCommand;
+use WebVision\WvDeepltranslate\Command\GlossaryListCommand;
+use WebVision\WvDeepltranslate\Command\GlossarySyncCommand;
+use WebVision\WvDeepltranslate\Service\DeeplGlossaryService;
+use WebVision\WvDeepltranslate\Service\DeeplService;
 
 return function (ContainerConfigurator $containerConfigurator, ContainerBuilder $containerBuilder) {
     $services = $containerConfigurator
@@ -20,7 +20,7 @@ return function (ContainerConfigurator $containerConfigurator, ContainerBuilder 
 
     // Main DI
     $services
-        ->load('TimDreier\\TdDeepltranslate\\', '../Classes/')
+        ->load('WebVision\\WvDeepltranslate\\', '../Classes/')
         ->exclude('../Classes/{Domain/Model,Override/DatabaseRecordList.php}');
 
     // register console commands
@@ -53,14 +53,14 @@ return function (ContainerConfigurator $containerConfigurator, ContainerBuilder 
         );
 
     // add caching
-    /*$services->set('cache.tddeepltranslate')
+    /*$services->set('cache.wvdeepltranslate')
         ->class(FrontendInterface::class)
         ->factory([service(CacheManager::class), 'getCache'])
-        ->args(['tddeepltranslate']);
+        ->args(['wvdeepltranslate']);
     $services
         ->set(DeeplService::class)
-        ->args(['cache', service('cache.tddeepltranslate')]);
+        ->args(['cache', service('cache.wvdeepltranslate')]);
     $services
         ->set(DeeplGlossaryService::class)
-        ->args(['cache', service('cache.tddeepltranslate')]);*/
+        ->args(['cache', service('cache.wvdeepltranslate')]);*/
 };

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TimDreier\TdDeepltranslate\Exception;
+namespace WebVision\WvDeepltranslate\Exception;
 
 class ClientNotValidUrlException extends \Exception
 {

@@ -1,4 +1,4 @@
-# TYPO3 extension `td_deepltranslate`
+# TYPO3 extension `wv_deepltranslate`
 
 This extension is a fork of [wv_deepltranslate](https://github.com/web-vision/wv_deepltranslate/) which provides automated translation of pages, content and records
 to languages supported by [DeepL](https://www.deepl.com/de/docs-api/) in TYPO3 v12.
@@ -20,11 +20,11 @@ If you really depend on the extension better use the [early access program](http
 
 ## Installation
 
-Install with `composer req timdreier/td_deepltranslate`.
+Install with `composer req web-vision/wv_deepltranslate`.
 
 |                  | URL                                                               |
 |------------------|-------------------------------------------------------------------|
-| **Repository:**  | https://github.com/timdreier/td_deepltranslate                    |
+| **Repository:**  | https://github.com/web-vision/wv_deepltranslate                    |
 
 ## Sponsors
 We appreciate very much the sponsorships of the developments and features in

@@ -1,4 +1,4 @@
 TCEMAIN {
   translateToMessage =
 }
-templates.typo3/cms-backend.1644483508 = timdreier/td-deepltranslate:Resources/Private/Backend
+templates.typo3/cms-backend.1644483508 = web-vision/wv_deepltranslate:Resources/Private/Backend

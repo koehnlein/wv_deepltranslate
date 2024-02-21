@@ -1,6 +1,6 @@
 <?php
 
-namespace TimDreier\TdDeepltranslate\Override;
+namespace WebVision\WvDeepltranslate\Override;
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -15,7 +15,7 @@ namespace TimDreier\TdDeepltranslate\Override;
  * The TYPO3 project - inspiring people to share!
  */
 
-use TimDreier\TdDeepltranslate\Utility\DeeplBackendUtility;
+use WebVision\WvDeepltranslate\Utility\DeeplBackendUtility;
 
 /**
  * Class for rendering of Web>List module
@@ -40,7 +40,7 @@ class DatabaseRecordList extends \TYPO3\CMS\Backend\RecordList\DatabaseRecordLis
             }
 
             // glossaries should not be auto translated by DeepL
-            if ($table === 'tx_tddeepltranslate_glossaryentry') {
+            if ($table === 'tx_wvdeepltranslate_glossaryentry') {
                 return $out;
             }
 

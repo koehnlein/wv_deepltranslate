@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TimDreier\TdDeepltranslate\Hooks;
+namespace WebVision\WvDeepltranslate\Hooks;
 
 use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
@@ -22,8 +22,8 @@ class DeeplPreviewFlagGeneratePageHook
             || $controller->doWorkspacePreview()
             || ($controller->config['config']['disablePreviewNotification'] ?? false)
             || (
-                isset($controller->page['tx_tddeepltranslate_translated_time'])
-                && $controller->page['tx_tddeepltranslate_translated_time'] === 0
+                isset($controller->page['tx_wvdeepltranslate_translated_time'])
+                && $controller->page['tx_wvdeepltranslate_translated_time'] === 0
             )
         ) {
             return;

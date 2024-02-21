@@ -1,5 +1,5 @@
 {
-	"name": "timdreier/td-deepltranslate",
+	"name": "web-vision/wv_deepltranslate",
 	"type": "typo3-cms-extension",
 	"description": "This extension provides option to translate content element, and TCA record texts to DeepL supported languages using DeepL API services.",
 	"license": ["GPL-2.0-or-later"],
@@ -19,8 +19,8 @@
 		}
 	],
 	"support": {
-		"issues": "https://github.com/timdreier/td_deepltranslate/issues",
-		"source": "https://github.com/timdreier/td_deepltranslate"
+		"issues": "https://github.com/web-vision/wv_deepltranslate/issues",
+		"source": "https://github.com/web-vision/wv_deepltranslate"
 	},
 	"conflict": {
 		"studiomitte/recordlist-thumbnail": "*"
@@ -36,7 +36,7 @@
 	},
 	"extra": {
 		"typo3/cms": {
-			"extension-key": "td_deepltranslate"
+			"extension-key": "wv_deepltranslate"
 		}
 	},
 	"require": {
@@ -52,7 +52,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"TimDreier\\TdDeepltranslate\\": "Classes"
+			"WebVision\\WvDeepltranslate\\": "Classes"
 		}
 	}
 }

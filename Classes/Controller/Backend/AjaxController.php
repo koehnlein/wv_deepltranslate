@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace TimDreier\TdDeepltranslate\Controller\Backend;
+namespace WebVision\WvDeepltranslate\Controller\Backend;
 
 use Psr\Http\Message\ServerRequestInterface;
 
 use TYPO3\CMS\Core\Http\JsonResponse;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TimDreier\TdDeepltranslate\Configuration;
+use WebVision\WvDeepltranslate\Configuration;
 
 // @todo use #[Controller] if 12.4+ only support is established, see: TYPO3\CMS\Backend\Attribute\Controller;
 final class AjaxController

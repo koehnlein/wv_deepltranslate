@@ -6,13 +6,13 @@
 Table Configuration
 ===================
 
-*td_deepltranslate* supports translation of specific fields of TCA records. It
+*wv_deepltranslate* supports translation of specific fields of TCA records. It
 understands fields which need to be translated, only if their ``l10n_mode``
 is set to ``prefixLangTitle``.
 
-For detecting translatable fields, *td_deepltranslate* uses a DataHandler hook.
+For detecting translatable fields, *wv_deepltranslate* uses a DataHandler hook.
 
-The following setup is needed, to get *td_deepltranslate* work on your table:
+The following setup is needed, to get *wv_deepltranslate* work on your table:
 
 .. code-block:: php
     :caption: <extension_key>/Configuration/TCA/Overrides/<table_name>.php

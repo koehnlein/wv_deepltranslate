@@ -9,7 +9,7 @@ Extension Configuration
 Some general settings can be configured in the Extension Configuration.
 
 #. Go to :guilabel:`Admin Tools > Settings > Extension Configuration`
-#. Choose :guilabel:`td_deepltranslate`
+#. Choose :guilabel:`wv_deepltranslate`
 
 .. image:: /Images/Reference/configuration.png
     :alt: Screenshot of Extension configuration

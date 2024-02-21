@@ -24,7 +24,7 @@ additional four options apart from normal translate and copy.
 Translating a page
 ------------------
 
-*td_deepltranslate* adds a separate dropdown for DeepL translation of a page
+*wv_deepltranslate* adds a separate dropdown for DeepL translation of a page
 to list and web module. The dropdown is filtered to not translated pages
 and against DeepL API possible translation languages.
 
