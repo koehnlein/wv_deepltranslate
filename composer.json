@@ -54,5 +54,8 @@
 		"psr-4": {
 			"TimDreier\\TdDeepltranslate\\": "Classes"
 		}
+	},
+	"replace": {
+		"web-vision/wv_deepltranslate": "< 4.0.0"
 	}
 }
